@@ -71,7 +71,7 @@ public class Main {
         }
         int max = intArray5[0];
         int min = intArray5[0];
-        for (int ii:intArray5) { // Поиск максимального элемента в массиве
+        for (int ii : intArray5) { // Поиск максимального элемента в массиве
             if (ii > max) max = ii;
             if (ii < min) min = ii;
         }
@@ -79,22 +79,80 @@ public class Main {
         System.out.println("Максимальный элемент: " + max);
         System.out.println("Минимальный элемент: " + min);
 
+        /*
 
-	/*
+        6. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
+        метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
+        Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы в массив не входят.
+        */
 
-    6. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
-    метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
-    Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы в массив не входят.
+        System.out.println();
+        System.out.println();
+        System.out.println("Задание №6");
+//        int[] intArray6 = new int[5];
+//        for (i = 0; i < 5; i++) { // Заполнение массива случайными целыми числами
+//            intArray6[i] = generateRandom(0, 10);
+//            System.out.print(intArray6[i] + " ");
+//        }
+        System.out.println();
+        int[] intArray6 = {1, 2, 1, 0, 3};
+        for (i = 0; i < intArray6.length; i++) {
+            System.out.print(intArray6[i] + " ");
+        }
+        System.out.println();
+        for (i = 0; i < intArray6.length; i++) {
+            if (checkBalance(intArray6, i))
+                System.out.println("Индекс элемента: " + i + ". Значение элемента: " + intArray[i - 1]);
+        }
 
-    7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным,
-     или отрицательным), при этом метод должен сместить все элементымассива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
-	 */
+        /*
+        7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным,
+         или отрицательным), при этом метод должен сместить все элементымассива на n позиций.
+          Для усложнения задачи нельзя пользоваться вспомогательными массивами.
+         */
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Задание №7");
+        int[] intArray7 = {1, 2, 1, 0, 3};
+        int n = 2;
+        for (i = 0; i < intArray7.length; i++) {
+            System.out.print(intArray7[i] + " ");
+        }
+        System.out.println();
+        splitArray(intArray7, n);
     }
+
 
     private static int generateRandom(int a, int b) {
-        int random = a + (int) (Math.random() * b);
-        return random;
+        return a + (int) (Math.random() * b);
+    }
+
+    private static boolean checkBalance(int array[], int i) {
+        int sumLeft = 0;
+        int sumRight = 0;
+        for (int j = 0; j < i; j++) {
+            sumLeft = array[j] + sumLeft;
+        }
+        for (int j = array.length - 1; j > i; j--) {
+            sumRight = array[j] + sumRight;
+        }
+        if (sumLeft == sumRight) return true;
+        else return false;
+    }
+
+    private static void splitArray(int array[], int n) {
+        for (int i = 0; i < array.length-n; i++) {
+            System.out.print(array[i+n] + " ");
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
+
+
+
+
 
 
