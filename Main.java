@@ -21,10 +21,10 @@ public class Main {
         System.out.println();
         int[] intArray2 = new int[8];
         int j = 0;
-        for (int i : intArray2) {
-            i = j;
-            System.out.print(i + " ");
+        for (int i = 0; i < 8; i++) {
+            intArray2[i] = j;
             j += 3;
+            System.out.print(intArray2[i] + " ");
         }
 
 	/*
@@ -39,8 +39,31 @@ public class Main {
 	/*
     4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое), и
      с помощью цикла(-ов) заполнить его диагональные элементы единицами;
-    
+    */
+        System.out.println();
+        int i = 3; // Размер квадратной матрицы
+        int[][] intArray4 = new int[i][i]; // Инициализация двумерного массива
+        for (int k1 = 0; k1 < i; k1++) {
+            for (int k2 = 0; k2 < i; k2++) {
+                if (k1 == k2) intArray4[k1][k2] = 1;
+                else intArray4[k1][k2] = 0;
+                System.out.print(intArray4[k1][k2] + " ");
+            }
+            System.out.println();
+        }
+	/*
     5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
+    */
+
+        int[] intArray5 = new int[5];
+        for (int i = 0; i < 5; i++) {
+
+        }
+
+        public static int generateRandom ( int a, int b){
+
+        }
+	/*
 
     6. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
     метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
